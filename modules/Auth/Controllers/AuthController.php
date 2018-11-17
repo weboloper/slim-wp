@@ -4,13 +4,27 @@ namespace Modules\Auth\Controllers;
 
 use \Exception;
 use App\Models\User;
+use App\Models\Post;
 use Respect\Validation\Validator as v;
 use App\Exceptions\UserNotActiveException;
 
 class AuthController extends Controller
 {	
 	public function home($request, $response) {
-		return $this->view->render($response, '@Auth\auth\home.twig');
+
+		include_once( __DIR__ .'/../../../public/w/wp-load.php' );
+		wp_head();
+		Post::addShortcode('wpuf_form', function ($shortcode) {
+			// $shortcode->getName() . '.' . $shortcode->getParameter('id');
+		    return  do_shortcode('[wpuf_form id="'. $shortcode->getParameter('id') . '"]') ;
+		});
+
+		$post = Post::find(5);
+	
+		// echo shortcode_function();
+		// echo $post->content;
+		// wp_footer();
+		return $this->view->render($response, '@Auth\auth\home.twig', ['page' => $post]);
 	}
 
 	public function getRegister($request, $response)

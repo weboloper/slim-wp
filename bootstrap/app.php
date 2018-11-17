@@ -22,6 +22,7 @@ $params = array(
 );
 Corcel\Database::connect($params);
 
+
 require __DIR__ .'/../bootstrap/dependencies.php';
 
 require __DIR__ .'/../bootstrap/controllers.php';
