@@ -1,65 +1,7 @@
 {% extends "templates/base.twig" %}
 
 {% block title %}Auth Home{% endblock %}
-{% block head %}
-<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/slim\/wp\/public\/w\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-<link rel='stylesheet' id='wpuf-css-css'  href='http://localhost/slim/wp/public/w/wp-content/plugins/wp-user-frontend/assets/css/frontend-forms.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='jquery-ui-css'  href='http://localhost/slim/wp/public/w/wp-content/plugins/wp-user-frontend/assets/css/jquery-ui-1.9.1.custom.css?ver=4.9.8' type='text/css' media='all' />
-<link rel='stylesheet' id='wpuf-sweetalert2-css'  href='http://localhost/slim/wp/public/w/wp-content/plugins/wp-user-frontend/assets/vendor/sweetalert2/dist/sweetalert2.css?ver=2.9.3' type='text/css' media='all' />
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Kapat","currentText":"Bug\u00fcn","monthNames":["Ocak","\u015eubat","Mart","Nisan","May\u0131s","Haziran","Temmuz","A\u011fustos","Eyl\u00fcl","Ekim","Kas\u0131m","Aral\u0131k"],"monthNamesShort":["Oca","\u015eub","Mar","Nis","May","Haz","Tem","A\u011fu","Eyl","Eki","Kas","Ara"],"nextText":"Sonraki","prevText":"\u00d6nceki","dayNames":["Pazar","Pazartesi","Sal\u0131","\u00c7ar\u015famba","Per\u015fembe","Cuma","Cumartesi"],"dayNamesShort":["Paz","Pts","Sal","\u00c7ar","Per","Cum","Cts"],"dayNamesMin":["P","P","S","\u00c7","P","C","C"],"dateFormat":"d MM yy","firstDay":1,"isRTL":false});});
-</script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/plupload/moxie.min.js?ver=1.3.5'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/plupload/plupload.min.js?ver=2.1.9'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var pluploadL10n = {"queue_limit_exceeded":"S\u0131raya \u00e7ok fazla say\u0131da dosya koymaya \u00e7al\u0131\u015ft\u0131n\u0131z.","file_exceeds_size_limit":"%s bu site i\u00e7in tan\u0131ml\u0131 en fazla dosya boyutunu ge\u00e7iyor.","zero_byte_file":"Bu dosya bo\u015f. L\u00fctfen ba\u015fka bir tane deneyin.","invalid_filetype":"\u00dczg\u00fcn\u00fcm, g\u00fcvenlik nedenleriyle bu dosya tipine izin verilmiyor.","not_an_image":"Bu dosya bir g\u00f6rsel de\u011fil. L\u00fctfen ba\u015fka bir dosya deneyin.","image_memory_exceeded":"Bellek s\u0131n\u0131r\u0131 a\u015f\u0131ld\u0131. L\u00fctfen daha k\u00fc\u00e7\u00fck bir dosya deneyin.","image_dimensions_exceeded":"Bu dosyan\u0131n boyutu, izin verilen s\u0131n\u0131r\u0131n \u00fcst\u00fcnde. L\u00fctfen ba\u015fka bir dosya deneyin.","default_error":"Y\u00fckleme s\u0131ras\u0131nda bir hata olu\u015ftu. L\u00fctfen daha sonra tekrar deneyin.","missing_upload_url":"Bir yap\u0131land\u0131rma hatas\u0131 s\u00f6z konusu. L\u00fctfen sunucu y\u00f6neticinizle irtibat kurun.","upload_limit_exceeded":"Sadece 1 dosya y\u00fckleyebilirsiniz.","http_error":"HTTP hatas\u0131.","upload_failed":"Y\u00fckleme ba\u015far\u0131s\u0131z.","big_upload_failed":"L\u00fctfen dosyalar\u0131 %1$staray\u0131c\u0131 y\u00fckleyicisini%2$s kullan\u0131n.","big_upload_queued":"%s \u00e7oklu y\u00fckleyiciyi kullan\u0131rken izin verilen en y\u00fcksek dosya boyutunu ge\u00e7iyor.","io_error":"Dosya okuma\/yazma hatas\u0131.","security_error":"G\u00fcvenlik hatas\u0131.","file_cancelled":"Dosya iptal edildi.","upload_stopped":"Y\u00fckleme durdu.","dismiss":"Gizle","crunching":"\u0130\u015fleniyor\u2026","deleted":"\u00c7\u00f6p kutusuna ta\u015f\u0131nd\u0131.","error_uploading":"\u201c%s\u201d y\u00fcklemesi ba\u015far\u0131s\u0131z."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/plupload/handlers.min.js?ver=4.9.8'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-content/plugins/wp-user-frontend/assets/js/jquery-ui-timepicker-addon.js?ver=4.9.8'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wpuf_frontend_upload = {"confirmMsg":"Emin misiniz?","delete_it":"Evet, bunu sil","cancel_it":"Hay\u0131r, bunu iptal et","nonce":"a0c7d2cd28","ajaxurl":"http:\/\/localhost\/slim\/wp\/public\/w\/wp-admin\/admin-ajax.php","plupload":{"url":"http:\/\/localhost\/slim\/wp\/public\/w\/wp-admin\/admin-ajax.php?nonce=3160b35871","flash_swf_url":"http:\/\/localhost\/slim\/wp\/public\/w\/wp-includes\/js\/plupload\/plupload.flash.swf","filters":[{"title":"\u0130zin Verilen Dosyalar","extensions":"*"}],"multipart":true,"urlstream_upload":true,"warning":"Maksimum dosya say\u0131s\u0131na eri\u015fildi!","size_error":"Y\u00fckledi\u011finiz dosya dosya boyutu s\u0131n\u0131r\u0131n\u0131 a\u015f\u0131yor. L\u00fctfen tekrar deneyin.","type_error":"Yanl\u0131\u015f bir dosya t\u00fcr\u00fc y\u00fcklediniz. L\u00fctfen tekrar deneyin."}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-content/plugins/wp-user-frontend/assets/js/upload.js?ver=4.9.8'></script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-content/plugins/wp-user-frontend/assets/vendor/sweetalert2/dist/sweetalert2.js?ver=2.9.3'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var ajax_object = {"ajaxurl":"http:\/\/localhost\/slim\/wp\/public\/w\/wp-admin\/admin-ajax.php","fill_notice":"Some Required Fields are not filled!"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://localhost/slim/wp/public/w/wp-content/plugins/wp-user-frontend/assets/js/billing-address.js?ver=4.9.8'></script>
-<link rel='https://api.w.org/' href='http://localhost/slim/wp/public/w/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/slim/wp/public/w/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost/slim/wp/public/w/wp-includes/wlwmanifest.xml" /> 
-
-{% endblock %}
+{% block head %}{% endblock %}
 
 {% block content %}
     <h1>Auth Home</h1>
@@ -67,7 +9,7 @@ var ajax_object = {"ajaxurl":"http:\/\/localhost\/slim\/wp\/public\/w\/wp-admin\
         Auth Home
     </p>
 
-    {{ page.content | raw  }}
+ 
 {% endblock %}
 
 {% block footer %}{% endblock %}

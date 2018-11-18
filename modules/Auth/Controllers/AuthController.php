@@ -12,19 +12,21 @@ class AuthController extends Controller
 {	
 	public function home($request, $response) {
 
-		include_once( __DIR__ .'/../../../public/w/wp-load.php' );
-		wp_head();
-		Post::addShortcode('wpuf_form', function ($shortcode) {
-			// $shortcode->getName() . '.' . $shortcode->getParameter('id');
-		    return  do_shortcode('[wpuf_form id="'. $shortcode->getParameter('id') . '"]') ;
-		});
+		// include_once( __DIR__ .'/../../../public/w/wp-load.php' );
 
-		$post = Post::find(5);
+		// Post::addShortcode('wpuf_form', function ($shortcode) {
+		// 	// $shortcode->getName() . '.' . $shortcode->getParameter('id');
+			 
+		//     return  do_shortcode('[wpuf_form id="'. $shortcode->getParameter('id') . '"]') ;
+		// });
+ 
+
+		// $post = Post::find(5);
 	
 		// echo shortcode_function();
 		// echo $post->content;
 		// wp_footer();
-		return $this->view->render($response, '@Auth\auth\home.twig', ['page' => $post]);
+		return $this->view->render($response, '@Auth\auth\home.twig');
 	}
 
 	public function getRegister($request, $response)
