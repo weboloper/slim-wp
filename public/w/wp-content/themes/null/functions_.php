@@ -13,14 +13,7 @@ if (! function_exists('after_setup_theme_example')) :
 	function after_setup_theme_example() {
 		global $wpdb;
 
- 		// $wpdb->query("ALTER TABLE wp_users ADD facility_id INT(1) NOT NULL DEFAULT 1");
-
-		// $row = $wpdb->get_results(  "SELECT * FROM INFORMATION_SCHEMA.COLUMNS
-		// WHERE 
-		// 	TABLE_SCHEMA = 'slim_wp' 
-		// 	AND TABLE_NAME = '{$wpdb->prefix}_users' 
-		// 	AND COLUMN_NAME = 'ID' "  );
-
+ 
 		$row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}_users ");
 
 		if(!isset($row->facility_id)){
@@ -34,28 +27,10 @@ if (! function_exists('after_setup_theme_example')) :
 		if(!isset($row->section_id)){
 			$wpdb->query("ALTER TABLE wp_users ADD section_id INT(11) NOT NULL DEFAULT 0");
 		}
-		 
-
-
+		
 	}
 endif;
-
-
-// function enqueue_my_scripts() {
-
-//     // wp_enqueue_style( 'theme-style', get_stylesheet_uri(), array( 'reset' ) );
-// 	// wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/reset.css' );
-
-// 	// wp_enqueue_script( 'owl-carousel', get_stylesheet_directory_uri() . '/owl.carousel.js', array( 'jquery' ) );
-// 	// wp_enqueue_script( 'theme-scripts', get_stylesheet_directory_uri() . '/website-scripts.js', array( 'owl-carousel', 'jquery' ), '1.0', true );
-
-// 	wp_enqueue_style( 'select2-css', get_stylesheet_directory_uri() . '/assets/select2/select2.min.css' , array( 'select2-css' ) );
-// 	wp_enqueue_script( 'select2-js', get_stylesheet_directory_uri() . '/assets/select2/select2.min.js', array( 'select2-js', 'jquery' ), '1.0', true );
-
-// }
-// add_action( 'admin_enqueue_scripts', 'enqueue_my_scripts' );
-
-
+ 
 
 // LOADIN ADMIN STYLES
 function load_custom_wp_admin_style() {
@@ -133,8 +108,3 @@ function save_multiple_field( $post_id ) {
     update_post_meta( $post_id, '_field_meta_key', array_map( 'intval', $_POST['select_value'] ) );
 
 }
-
-// echo "<pre>" ;
-// var_dump($wp_filter);
-// var_dump($wp_actions);
-// echo "</pre>";
