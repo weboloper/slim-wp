@@ -36,10 +36,4 @@ class User extends Model
         ]);
     }
 
-    public function resetPassword()
-    {
-        return $this->hasOne('App\Models\ResetPassword');
-        // return $this->hasOne('App\Models\ResetPassword', 'user_id', 'id');
-    }
-
 }
