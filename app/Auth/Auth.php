@@ -51,7 +51,8 @@ class Auth {
 		    return true;
 		}
 
-		return false;	 
+		throw new Exception('Could not login with those details');
+
 
 	}
  

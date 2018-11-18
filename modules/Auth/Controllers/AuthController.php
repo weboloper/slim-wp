@@ -61,7 +61,7 @@ class AuthController extends Controller
 			'user_nicename' => $request->getParam('firstname') . ' ' . $request->getParam('lastname') ,
 			'display_name'	=> $request->getParam('firstname') . ' ' . $request->getParam('lastname') ,
 			'user_email'	=> $request->getParam('email'),
-			'user_pass'		=> $this->passwordService->makeHash($request->getParam('user_pass')),
+			'user_pass'		=> $this->passwordService->makeHash($request->getParam('password')),
 			'user_activation_key' => password_hash( $token , PASSWORD_DEFAULT)
 		]);
 
