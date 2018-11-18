@@ -30,8 +30,9 @@ class User extends Model
     
     public function setPassword($password)
     {   
+        $passwordService = new  \Corcel\Services\PasswordService;
         $this->update([
-            'password' =>    password_hash( $password , PASSWORD_DEFAULT) 
+            'user_pass' =>   $passwordService->makeHash( $password )
         ]);
     }
 
